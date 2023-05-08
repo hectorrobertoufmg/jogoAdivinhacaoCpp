@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 
 
@@ -16,7 +18,8 @@ int main()
     bool opcaoinvalida = true;
 
 
-    // Variavel que receberá o input do nivel da dificuldade    
+    // Variavel que receberá o input do nivel da dificuldade  
+    // A  
     
     while(opcaoinvalida)
     {
@@ -44,11 +47,14 @@ int main()
     
     
 
+    // Cria uma semente para o numero pseudoaleatório, pois a funcao rand faz uma conta a partir do valor da semente
+    // se o valor da semente for o mesmo, os nuermos serão sempre o mesmo, por isso é interessante sempre alterar
+    
+    std::srand(time(NULL));
 
-    const int NUMEROSECRETO = 42;
+    const int NUMEROSECRETO = (std::rand() % 100); // Aqui estou diviindo por 100, para pegar o resto 
     int chute;
     int tentativas = 0;
-
     double pontos = 1000;
     
     for(tentativas; tentativas < numeroTentativas; ++tentativas )
